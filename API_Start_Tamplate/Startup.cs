@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+using API_Start_Template;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 
 namespace API_Start_Tamplate
 {
@@ -26,6 +30,29 @@ namespace API_Start_Tamplate
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            //Here we creating settings for JWT Auth
+            var key = "My test jwt token key";//this is a key for jwt token. It needs to be more complicated and sequred than this
+
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(key)),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
+            services.AddSingleton<IJwtAuthenticationManager>(new JwtAuthenticationManager(key));
+            //----
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +66,8 @@ namespace API_Start_Tamplate
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication(); // this is really important to put before  "app.UseAuthorization();"
 
             app.UseAuthorization();
 

@@ -72,5 +72,25 @@ namespace API_Start_Template.Services
             }
         }
 
+        public bool Delete(string name)
+        {
+            string jsonString = File.ReadAllText(fileName);
+
+            List<Wallet> rootObject = new List<Wallet>();
+            rootObject = JsonSerializer.Deserialize<List<Wallet>>(jsonString);
+
+            foreach (Wallet item in rootObject)
+            {
+                if (item.Name == name)
+                {
+                    rootObject.Remove(item);
+                    jsonString = JsonSerializer.Serialize(rootObject);
+                    File.WriteAllText(fileName, jsonString);
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }

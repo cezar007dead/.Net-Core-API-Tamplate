@@ -1,1 +1,17 @@
-[{"Name":"My main wallet","LastTimeAccess":"2020-10-29T20:40:22.4625-07:00","Value":240.2},{"Name":"Tigran\u0027s wallet","LastTimeAccess":"2020-10-29T20:40:22.46252-07:00","Value":0.55}]
+[
+  {
+    "Name": "My main wallet",
+    "LastTimeAccess": "2021-01-15T15:43:07.0195493-08:00",
+    "Value": 240.2
+  },
+  {
+    "Name": "Alan\u0027s wallet 3",
+    "LastTimeAccess": "2021-01-15T15:43:23.1245831-08:00",
+    "Value": 0.55
+  },
+  {
+    "Name": "My savings",
+    "LastTimeAccess": "2021-01-15T15:43:07.0195625-08:00",
+    "Value": 8324.24
+  }
+]

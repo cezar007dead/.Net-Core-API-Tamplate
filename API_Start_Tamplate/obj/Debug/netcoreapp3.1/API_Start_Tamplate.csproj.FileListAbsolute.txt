@@ -10,8 +10,6 @@ D:\GitHub\.Net-Core-API-Tamplate\API_Start_Tamplate\bin\Debug\netcoreapp3.1\API_
 D:\GitHub\.Net-Core-API-Tamplate\API_Start_Tamplate\obj\Debug\netcoreapp3.1\API_Start_Tamplate.csprojAssemblyReference.cache
 D:\GitHub\.Net-Core-API-Tamplate\API_Start_Tamplate\obj\Debug\netcoreapp3.1\API_Start_Tamplate.AssemblyInfoInputs.cache
 D:\GitHub\.Net-Core-API-Tamplate\API_Start_Tamplate\obj\Debug\netcoreapp3.1\API_Start_Tamplate.AssemblyInfo.cs
-D:\GitHub\.Net-Core-API-Tamplate\API_Start_Tamplate\obj\Debug\netcoreapp3.1\API_Start_Tamplate.csproj.CoreCompileInputs.cache
-D:\GitHub\.Net-Core-API-Tamplate\API_Start_Tamplate\obj\Debug\netcoreapp3.1\API_Start_Tamplate.MvcApplicationPartsAssemblyInfo.cache
 D:\GitHub\.Net-Core-API-Tamplate\API_Start_Tamplate\obj\Debug\netcoreapp3.1\API_Start_Tamplate.RazorTargetAssemblyInfo.cache
 D:\GitHub\.Net-Core-API-Tamplate\API_Start_Tamplate\obj\Debug\netcoreapp3.1\staticwebassets\API_Start_Tamplate.StaticWebAssets.Manifest.cache
 D:\GitHub\.Net-Core-API-Tamplate\API_Start_Tamplate\obj\Debug\netcoreapp3.1\staticwebassets\API_Start_Tamplate.StaticWebAssets.xml
@@ -19,3 +17,14 @@ D:\GitHub\.Net-Core-API-Tamplate\API_Start_Tamplate\obj\Debug\netcoreapp3.1\API_
 D:\GitHub\.Net-Core-API-Tamplate\API_Start_Tamplate\obj\Debug\netcoreapp3.1\API_Start_Tamplate.pdb
 D:\GitHub\.Net-Core-API-Tamplate\API_Start_Tamplate\obj\Debug\netcoreapp3.1\API_Start_Tamplate.genruntimeconfig.cache
 D:\GitHub\.Net-Core-API-Tamplate\API_Start_Tamplate\bin\Debug\netcoreapp3.1\StaticData\Wallets.json
+D:\GitHub\.Net-Core-API-Tamplate\API_Start_Tamplate\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\GitHub\.Net-Core-API-Tamplate\API_Start_Tamplate\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\GitHub\.Net-Core-API-Tamplate\API_Start_Tamplate\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\GitHub\.Net-Core-API-Tamplate\API_Start_Tamplate\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+D:\GitHub\.Net-Core-API-Tamplate\API_Start_Tamplate\obj\Debug\netcoreapp3.1\API_Start_Tamplate.csproj.CopyComplete
+D:\GitHub\.Net-Core-API-Tamplate\API_Start_Tamplate\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\GitHub\.Net-Core-API-Tamplate\API_Start_Tamplate\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+D:\GitHub\.Net-Core-API-Tamplate\API_Start_Tamplate\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\GitHub\.Net-Core-API-Tamplate\API_Start_Tamplate\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\GitHub\.Net-Core-API-Tamplate\API_Start_Tamplate\obj\Debug\netcoreapp3.1\API_Start_Tamplate.csproj.CoreCompileInputs.cache
+D:\GitHub\.Net-Core-API-Tamplate\API_Start_Tamplate\obj\Debug\netcoreapp3.1\API_Start_Tamplate.MvcApplicationPartsAssemblyInfo.cache

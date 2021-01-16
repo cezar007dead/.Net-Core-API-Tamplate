@@ -4,13 +4,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using API_Start_Template.Modals;
 using API_Start_Template.Modals.Request;
+using API_Start_Template.ServerModals;
 using API_Start_Template.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API_Start_Template.Controllers
 {
-    [Route("api/mywallet")]
+    [Authorize(Roles = "Administrator")]
+    [Route("api/wallet")]
     [ApiController]
     public class WalletController : ControllerBase
     {
@@ -23,50 +26,77 @@ namespace API_Start_Template.Controllers
 
 
         [Route("{name}"), HttpGet]
-        public Wallet Get(string name)
+        public ItemResponse<Wallet> Get(string name)
         {
-            Wallet wallet = new Wallet();
+            var responseBody = new ItemResponse<Wallet>();
             bool success = true;
-            (success, wallet) = _service.Get(name);
+            (success, responseBody.Item) = _service.Get(name);
 
             if (success)
             {
                 Response.StatusCode = 200;
-                return wallet;
+                responseBody.IsSuccessful = true;
+                return responseBody;
             }
 
             Response.StatusCode = 404;
-            return null;
+            responseBody.IsSuccessful = false;
+            return responseBody;
         }
-        
-        [Route("list"),HttpGet]
-        public List<Wallet> GetAll()
+
+        [Route("list"), HttpGet]
+        public ItemResponse<List<Wallet>> GetAll()
         {
-            List<Wallet> wallets = new List<Wallet>();
-            wallets = _service.GetAll();
+            var responseBody = new ItemResponse<List<Wallet>>();
+
+            responseBody.Item = _service.GetAll();
+            responseBody.IsSuccessful = true;
 
             Response.StatusCode = 200;
-            return wallets;
+            return responseBody;
         }
 
 
         [HttpPost]
-        public string Create(WalletRequest requestBody)
+        
+        public ItemResponse<string> Create(WalletRequest requestBody)
         {
             Exception x = new Exception();
+            var responseBody = new ItemResponse<string>();
             bool success = true;
             (success, x) = _service.Create(requestBody);
             if (success)
             {
                 Response.StatusCode = 200;
-                return "Created";
+                responseBody.Item = "Created";
+                responseBody.IsSuccessful = true;
             }
             else
             {
                 Response.StatusCode = 500;
                 Console.WriteLine(x.Message);
-                return "ServerError";
+                responseBody.IsSuccessful = false;
             }
+            return responseBody;
+        }
+
+        [Route("{name}"), HttpDelete]
+        public ItemResponse<object> Delete(string name)
+        {
+            bool success = true;
+            var responseBody = new ItemResponse<object>();
+            success = _service.Delete(name);
+            if (success)
+            {
+                Response.StatusCode = 200;
+                responseBody.IsSuccessful = true;
+            }
+            else
+            {
+                Response.StatusCode = 404;
+                responseBody.IsSuccessful = false;
+            }
+            return responseBody;
         }
     }
 }
