@@ -7,7 +7,7 @@ It also has jwt roles auth. You can set up your custom roles.
 It also hase api enpoits. This endpoints was made just to show how it works.
 You can also dowload POST MAN exports and use them on this api.
 
-To authenticate use this users name and password
+To authenticate use this username and password:
 
 ##### testusername
 ##### testpassword
